@@ -55,6 +55,11 @@ module.exports = function(grunt) {
           ext: '.min.css'
         }]
       }
+    },
+    clean: {
+      dist: {
+        src: ['dist/']
+      }
     }
   });
 
@@ -63,4 +68,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', ['webfont:entypo', 'webfont:entypoPlus', 'cssmin:icons']);
+  grunt.registerTask('clean', ['clean:dist']);
 };

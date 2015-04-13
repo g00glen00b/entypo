@@ -1,64 +1,36 @@
-Development docs
-================
-
-Set if scripts to easily build webfonts from SVG images
+Development
+===========
+This project uses Grunt to build the original SVG files to fonts.
 
 Installation
 ------------
 
-### Ubuntu
+### Node.js
+First, make sure that you installed [Node.js](https://nodejs.org/). Then follow the instructions below to install the necessary tools:
 
-**(!)** Use Ubuntu **12.04**. Or you will have to manually install fresh
-freetype library, to build ttfautohint.
+1. Install Grunt
+        npm install -g grunt-cli
+2. Install project resources (make sure that the project is your working directory)
+       npm install
 
-Init font-builder and build additional software (ttf2eot, ttfautohint):
+### Fontforge
 
-    make support
+#### Mac OS X
+Make sure that you installed [Brew](http://brew.sh/). Then install Fontforge using:
 
-Install system dependencies (fontforge & python modules):
+    brew install fontforge
 
-    cd support/font-builder && sudo make dev-deps
+#### Linux (Debian)
+Install Fontforge using `apt-get`:
 
+    sudo apt-get install fontforge
 
-If you are working on multiple font you would like to have only one instance of
-heavy dependencies like _ttfautohint_ installed. Run this:
+#### Windows
+The grunt-webfont package does not officially support Windows.
 
-    cd support/font-builder && sudo make support-install
+Running the project
+-------------------
 
+Use the following command to create a build:
 
-Note that you don't need to install system dependencies more than once.
-
-
-### Mac
-
-TBD. Anyone, please help.
-
-
-### Windows
-
-TBD. Anyone, please help.
-
-
-Making font
------------
-
-### Steps
-
-1. Place images into `/src/svg` folder.
-2. Add image info to `config.yml` (see comments in it)
-3. Edit css/html templates, if needed.
-4. Run `make`
-
-Generated data will be placed in `./font`
-
-You can rebuild css/html only with `make html`
-
-### SVG image requirements
-
-Any image will be proportionnaly scaled, to fit height in ascent-descent
-It's convenient to make height = 1000px. Default font baseline will be 20% from
-the bottom.
-
-In most cases it's ok to visually allign icons to middle line, not to baseline.
-If you are not shure, how to start - make image with 10% top/bottom padding.
-Then generate demo page and tune scale/offset.
+    grunt build
