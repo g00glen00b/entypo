@@ -1,7 +1,8 @@
-Experimental scripts to automate Entypo font building.
+Entypo+
+===
+There's an experimental script to automate the Entypo font building. It's commonly used in web projects, but it's not maintained and isn't really compatible with dependency management tools like Bower because there is no configuration.
 
-Please, don't use until this work finished. Look now original at entypo
-site: http://www.entypo.com
+This project is a fork of the original Entypo project, and includes Bower configuration and replaces font-builder with fontforge.
 
 License
 -------
@@ -26,4 +27,3 @@ Font is distributed under
 
 This project uses [font-builder](https://github.com/fontello/font-builder)
 scripts to generate data.
-
