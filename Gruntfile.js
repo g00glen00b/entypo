@@ -40,7 +40,7 @@ module.exports = function(grunt) {
           destHtml: 'dist/demo',
           engine: 'fontforge',
           autoHint: false,
-          descent: 0,
+          descent: 150,
           fontHeight: 1000
         }
       }

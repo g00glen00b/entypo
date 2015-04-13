@@ -4,7 +4,7 @@
   "description": "Node.js follow-up project of a font-generator based on the icons",
   "keywords": ["icons", "entypo", "entypo+"],
   "homepage": "http://entypo.com",
-  "license": "OFL-1.1, CC-BY-SA-3.0",
+  "license": ["OFL-1.1", "CC-BY-SA-3.0"],
   "author": {
     "name": "Daniel Buce",
     "email": "daniel@precinct.net",
