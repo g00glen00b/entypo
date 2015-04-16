@@ -3,43 +3,38 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     webfont: {
+      dest: 'dist/fonts',
+      destCss: 'dist/css',
+      options: {
+        types: ['eot', 'woff', 'ttf', 'svg'],
+        styles: ['font', 'icon'],
+        syntax: 'bootstrap',
+        hashes: false,
+        order: ['eot', 'woff', 'ttf', 'svg'],
+        stylesheet: 'css',
+        relativeFonthPath: '../fonts',
+        htmlDemo: true,
+        destHtml: 'dist/html',
+        engine: 'fontforge',
+        autoHint: false
+      },
       entypoPlus: {
         src: 'src/svg/entypo-plus/*.svg',
-        dest: 'dist/fonts',
-        destCss: 'dist/css',
+        dest: '<%= webfont.dest %>',
+        destCss: '<%= webfont.destCss %>',
         options: {
-          types: ['eot', 'woff', 'ttf', 'svg'],
-          styles: ['font', 'icon'],
           font: 'EntypoPlus',
-          syntax: 'bootstrap',
-          hashes: false,
-          order: ['eot', 'woff', 'ttf', 'svg'],
-          stylesheet: 'css',
-          relativeFonthPath: '../fonts',
-          htmlDemo: true,
-          destHtml: 'dist/demo',
-          engine: 'fontforge',
-          autoHint: false,
+          htmlDemoTemplate: 'src/html/entypo-plus.tpl.html',
           fontHeight: 20
         }
       },
       entypo: {
         src: 'src/svg/entypo/*.svg',
-        dest: 'dist/fonts',
-        destCss: 'dist/css',
+        dest: '<%= webfont.dest %>',
+        destCss: '<%= webfont.destCss %>',
         options: {
-          types: ['eot', 'woff', 'ttf', 'svg'],
-          styles: ['font', 'icon'],
           font: 'Entypo',
-          syntax: 'bootstrap',
-          hashes: false,
-          order: ['eot', 'woff', 'ttf', 'svg'],
-          stylesheet: 'css',
-          relativeFonthPath: '../fonts',
-          htmlDemo: true,
-          destHtml: 'dist/demo',
-          engine: 'fontforge',
-          autoHint: false,
+          htmlDemoTemplate: 'src/html/entypo.tpl.html',
           descent: 150,
           fontHeight: 1000
         }
@@ -49,11 +44,18 @@ module.exports = function(grunt) {
       icons: {
         files: [{
           expand: true,
-          cwd: 'dist/css',
+          cwd: '<%= webfont.destCss %>',
           src: ['*.css'],
-          dest: 'dist/css',
+          dest: '<%= webfont.destCss %>',
           ext: '.min.css'
         }]
+      }
+    },
+    mkdir: {
+      htmlDist: {
+        options: {
+          create: ['<%= webfont.options.destHtml %>']
+        }
       }
     },
     clean: {
@@ -66,7 +68,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-mkdir');
 
-  grunt.registerTask('build', ['webfont:entypo', 'webfont:entypoPlus', 'cssmin:icons']);
-  grunt.registerTask('clean', ['clean:dist']);
+  grunt.registerTask('build', ['mkdir:htmlDist', 'webfont:entypo', 'webfont:entypoPlus', 'cssmin:icons']);
 };
