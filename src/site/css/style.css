@@ -1,0 +1,155 @@
+.navbar {
+  height: 70px;
+  background: #FFF;
+  color: #222;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:    0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow:         0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.navbar-no-collapse > * > .navbar-header,
+.navbar.navbar-no-collapse > * > .navbar-nav,
+.navbar.navbar-no-collapse > * > .navbar-right {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar.navbar-no-collapse > * > .navbar-form {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar.navbar-no-collapse > * > .navbar-nav > li {
+  float: left;
+}
+
+.navbar.navbar-no-collapse > * > .navbar-right {
+  float: right;
+  margin-right: -15px;
+}
+
+.navbar > .container {
+  padding-top: 10px;
+}
+
+.navbar .navbar-brand {
+  font-weight: 700;
+  color: #222;
+  font-size: 1.7em;
+  margin-top: -0.1em;
+}
+
+body {
+  padding-top: 70px;
+  font-family: 'Open Sans';
+}
+
+.btn.btn-danger {
+  border-width: 2px;
+  background: transparent;
+  color: #d43f3a;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.1s;
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:active,
+.btn.btn-danger:focus {
+  background: #D43f3a;
+  border-color: #D43f3a;
+  color: white;
+}
+
+.text-danger[class^="icon-"] {
+  color: #d43f3a;
+}
+
+a.icon {
+  color: #222;
+  min-height: 35px;
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  transition: all 0.1s;
+}
+
+a.icon:hover {
+  font-size: 1.3em;
+  text-decoration: none;
+  border-radius: 20px;
+  background: #F1F1F1;
+}
+
+.search {
+  position: relative;
+}
+
+.form-group.search > input {
+  padding-left: 25px;
+  border-radius: 0;
+}
+
+form > .form-group.search::before {
+  content: "\e003";
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  font-size: 13px;
+}
+
+.masthead {
+  background: #27272b;
+  padding: 2em;
+  color: #FFF;
+}
+
+.masthead h1 {
+  font-weight: 600;
+}
+
+.masthead h3 {
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 0.1em;
+}
+
+.masthead a {
+  color: #999;
+}
+
+.masthead a:hover,
+.masthead a:active,
+.masthead a.focus {
+  color: #a94442;
+  text-decoration: none;
+}
+
+a {
+  transition: color 0.1s;
+}
+
+.container+footer {
+  margin-top: 2em;
+}
+
+footer .text-muted {
+  color: #AAA;
+}
+
+footer .text-muted a {
+  color: #AAA;
+  text-decoration: none;
+}
+
+footer .text-muted a > strong {
+  font-weight: 600;
+  color: #999;
+}
+
+h2 > small {
+  color: #AAA;
+}
