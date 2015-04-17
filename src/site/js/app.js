@@ -1,5 +1,7 @@
-(function($) {
+(function($, hljs) {
   $(document).ready(function() {
+    hljs.initHighlightingOnLoad();
+
     $(".search > input").keydown(function(evt) {
       var el = this;
       setTimeout(function() {
@@ -16,4 +18,4 @@
       });
     });
   });
-}(jQuery));
+}(jQuery, hljs));

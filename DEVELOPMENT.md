@@ -34,3 +34,7 @@ Running the project
 Use the following command to create a build:
 
     grunt build
+
+Or run a local webserver with the project using:
+
+    grunt serve

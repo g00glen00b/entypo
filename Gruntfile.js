@@ -17,15 +17,16 @@ module.exports = function(grunt) {
         htmlDemoTemplate: 'src/site/templates/entypo.tpl.html',
         destHtml: 'dist/demo',
         engine: 'fontforge',
-        autoHint: false
+        autoHint: false,
+        descent: -50,
+        fontHeight: 1000
       },
       entypoPlus: {
         src: 'src/svg/entypo-plus/*.svg',
         dest: '<%= webfont.dest %>',
         destCss: '<%= webfont.destCss %>',
         options: {
-          font: 'EntypoPlus',
-          fontHeight: 20
+          font: 'EntypoPlus'
         }
       },
       entypo: {
@@ -33,9 +34,7 @@ module.exports = function(grunt) {
         dest: '<%= webfont.dest %>',
         destCss: '<%= webfont.destCss %>',
         options: {
-          font: 'Entypo',
-          descent: 150,
-          fontHeight: 1000
+          font: 'Entypo'
         }
       }
     },
@@ -69,7 +68,7 @@ module.exports = function(grunt) {
           port: 8080,
           livereload: 8081,
           base: './',
-          open: true
+          open: 'http://localhost:<%= connect.server.options.port %>/dist/demo/'
         }
       }
     },
