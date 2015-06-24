@@ -3,7 +3,7 @@
   "description": "Node.js follow-up project of a font-generator based on the icons",
   "version": "1.0.0",
   "main": "dist/css/Entypo.min.css",
-  "license": ["OFL-1.1", "CC-BY-SA-4.0"],
+  "license": ["CC-BY-SA-4.0"],
   "ignore": ["src/**", "dist/demo/**"],
   "keywords": ["icons", "entypo", "entypo+"],
   "homepage": "http://g00glen00b.github.io/entypo/",
