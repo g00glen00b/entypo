@@ -10,19 +10,19 @@ Installation
 ------------
 Installation is quite simple, you either download a release, or otherwise you can use Bower to install the package using:
 ```
-bower install entypo
+bower install entypo-css-only
 ```
 
 After downloading the package you can add the CSS files, either the unminified files:
 ```
-<link rel="stylesheet" href="dist/css/Entypo.css" />
-<link rel="stylesheet" href="dist/css/EntypoPlus.css" />
+<link rel="stylesheet" href="bower_components/entypo-css-only/dist/css/Entypo.css" />
+<link rel="stylesheet" href="bower_components/entypo-css-only/dist/css/EntypoPlus.css" />
 ```
 
 or the minified files:
 ```
-<link rel="stylesheet" href="dist/css/Entypo.min.css" />
-<link rel="stylesheet" href="dist/css/EntypoPlus.min.css" />
+<link rel="stylesheet" href="bower_components/entypo-css-only/dist/css/Entypo.min.css" />
+<link rel="stylesheet" href="bower_components/entypo-css-only/dist/css/EntypoPlus.min.css" />
 ```
 
 Usage
